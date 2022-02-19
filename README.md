@@ -7,3 +7,6 @@
   下载位置: https://sourceforge.net/projects/vim-taglist/files/
   官方网站: https://www.vim.org/scripts/script.php?script_id=273
   中文教程：https://www.cnblogs.com/diegodu/p/7088596.html
+
+配置sshkey
+    https://cloud.tencent.com/developer/article/1861466
