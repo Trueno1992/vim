@@ -35,7 +35,7 @@ let MRU_Include_Files = '\.c$\|\.h$\|\.cpp$\|\.hpp$\|.jce$\|.py$\|.log$\|.txt$'
 let MRU_Window_Height = 15     "窗口高度
 let MRU_Max_Menu_Entries = 15  "窗口中展示条数
 let MRU_Max_Entries = 100
-let MRU_Auto_Close = 0
+let MRU_Auto_Close = 1
 
 nmap tt :tabs<CR>
 nmap <C-h> <ESC>:tabp<CR>
@@ -97,10 +97,10 @@ highlight PmenuSel ctermbg=red ctermfg=yellow
 
 nmap ~ :nohlsearch<CR>
 
-nmap <left>  <C-w>l
-nmap <right> <C-w>h
-nmap <up>    <C-w>k
-nmap <down>  <C-w>j
+"nmap 44  <C-w>l
+"nmap 33  <C-w>h
+"nmap 11  <C-w>k
+"nmap 22  <C-w>j
 nmap 00 <C-w><C-w>
 
 "autocmd VimEnter *, exec Init()

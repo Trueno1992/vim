@@ -12,8 +12,16 @@ syn match cClass "::\<[A-Z][a-zA-Z_0-9]*\>&"ms=s+2,me=e-1
 syn match cClass "::\<[A-Z][a-zA-Z_0-9]*\> &"ms=s+2,me=e-1
 syn match cClass "::\<[A-Z][a-zA-Z_0-9]*\>\*"ms=s+2,me=e-1
 syn match cClass "::\<[A-Z][a-zA-Z_0-9]*\> \*"ms=s+2,me=e-1
+
+syn match cClass "<\<[A-Z][a-zA-Z_0-9]*\>\s*"ms=s+1
+syn match cClass "<\<[A-Z][a-zA-Z_0-9]*\>&"ms=s+1,me=e-1
+syn match cClass "<\<[A-Z][a-zA-Z_0-9]*\> &"ms=s+1,me=e-1
+syn match cClass "<\<[A-Z][a-zA-Z_0-9]*\>\*"ms=s+1,me=e-1
+syn match cClass "<\<[A-Z][a-zA-Z_0-9]*\> \*"ms=s+1,me=e-1
+
 syn match cClass "[ ,]\<[A-Z][a-zA-Z_0-9]*\>[ ,]"ms=s+1,me=e-1
-hi cClass guifg=#7fd02e cterm=bold ctermfg=brown
+syn match cClass "[ ]\<[A-Z][a-zA-Z_0-9]*\>[ >]"ms=s+1,me=e-1
+hi cClass guifg=#7fd02e cterm=bold ctermfg=DarkYellow
 
 syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>[^()]*)("me=e-2
 syn match cFunctions "\<[a-zA-Z_][a-zA-Z_0-9]*\>\s*("me=e-1
@@ -23,45 +31,24 @@ hi cFunctions guifg=#7fd02e cterm=bold ctermfg=LightBlue
 syn match KGLOBAL "\<[A-Z_][A-Z_0-9]*\>"
 hi KGLOBAL guifg=#7fd02e cterm=bold ctermfg=DarkCyan
 
+syn match map_hi display "[ :]map<"ms=s+1,me=e-1
+syn match set_hi display "[ :]set<"ms=s+1,me=e-1
+syn match queue_hi display "[ :]queue<"ms=s+1,me=e-1
+syn match string_hi display "[ :]string"ms=s+1
+syn match vector_hi display "[ :]vector<"ms=s+1,me=e-1
+syn match unordered_map_hi display "[ :]unordered_map<"ms=s+1,me=e-1
+syn match shared_ptr_hi display "[ :]shared_ptr<"ms=s+1,me=e-1
+syn match pair_hi display "[ :]pair<"ms=s+1,me=e-1
+syn match priority_queue_hi display "[ :]priority_queue<"ms=s+1,me=e-1
 
-"============= Highlight All Math Operator ====================
-" C math operators
-"syn match cMathOperator display "[-+\*/%=]"
-" C pointer operators
-"syn match cPointerOperator display "->\|\."
-" C logical operators - boolean results
-"syn match cLogicalOperator display "[!<>]=\="
-"syn match cLogicalOperator display "=="
-" C bit operators
-"syn match cBinaryOperator display "&\||\|\^\|<<\|>>=\="
-"syn match cBinaryOperator display "\~"
-"syn match cBinaryOperatorError display "\~="
-" More C logical operators
-"syn match cLogicalOperator display "&&\|||"
-"syn match cLogicalOperatorError display "&&\|||="
-
-" ==================== Math Operator ==========================
-"hi cMathOperator           ctermfg=gray guifg=#ADFF2F
-"hi cPointerOperator        ctermfg=gray guifg=#ADFF2F
-"hi cLogicalOperator        ctermfg=gray guifg=#ADFF2F
-"hi cBinaryOperator         ctermfg=gray guifg=#ADFF2F
-"hi cBinaryOperatorError    ctermfg=gray guifg=#ADFF2F
-"hi cLogicalOperator        ctermfg=gray guifg=#ADFF2F
-"hi cLogicalOperatorError   ctermfg=gray guifg=#ADFF2F
-"
-syn match map_hi display "map"
-syn match set_hi display "set"
-syn match queue_hi display "queue"
-syn match string_hi display "string"
-syn match vector_hi display "vector"
-syn match unordered_map_hi display "unordered_map"
-
-hi map_hi ctermfg=LightBlue guifg=#ADFF2F
-hi set_hi ctermfg=LightBlue guifg=#ADFF2F
-hi queue_hi ctermfg=LightBlue guifg=#ADFF2F
-hi vector_hi ctermfg=LightBlue guifg=#ADFF2F
-hi string_hi ctermfg=LightBlue guifg=#ADFF2F
-hi unordered_map_hi ctermfg=LightBlue guifg=#ADFF2F
+hi map_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi set_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi queue_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi vector_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi string_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi pair_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi unordered_map_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi shared_ptr_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
+hi priority_queue_hi guifg=#7fd02e cterm=bold ctermfg=LightCyan
 
 hi string ctermfg=LightRed guifg=#ADFF2F
-
