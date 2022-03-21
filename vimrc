@@ -18,8 +18,8 @@ let Tlist_File_Fold_Auto_Close = 0     " 不要关闭其他文件的tags
 let Tlist_Enable_Fold_Column = 0       " 不要显示折叠树  
 let Tlist_Show_One_File=1              " 不同时显示多个文件的tag，只显示当前文件的
 autocmd FileType h,cpp,cc,c set tags+=/usr/include/tags
-map  <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>        "按下F5重新生成tag文件，并更新taglist
-imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR><CR> :TlistUpdate<CR>  "按下F5重新生成tag文件，并更新taglist
+map  <F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR> :TlistUpdate<CR>        "按下F5重新生成tag文件，并更新taglist
+imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR> :TlistUpdate<CR>   "按下F5重新生成tag文件，并更新taglist
 
 "以下是taglist的设置
 nmap tt :Tlist<CR><CR> 00<CR>
@@ -30,7 +30,7 @@ let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口
 let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
 
 " mru 的配置
-nmap mm :MRU<CR>
+nmap ff :MRU<CR>
 let MRU_Include_Files = '\.c$\|\.h$\|\.cpp$\|\.hpp$\|.jce$\|.py$\|.log$\|.txt$'
 let MRU_Window_Height = 15     "窗口高度
 let MRU_Max_Menu_Entries = 15  "窗口中展示条数
@@ -56,23 +56,22 @@ if exists("+showtabline")
         let s = ''
         let wn = ''
         let t = tabpagenr()
-        let i = 1
+        let i = 1 
         while i <= tabpagenr('$')
             let buflist = tabpagebuflist(i)
             let winnr = tabpagewinnr(i)
-            let s .= '%' . i . 'T'
+            let s .= '%' . i . 'T' 
             let s .= (i == t ? '%1*' : '%2*')
-            let s .= ' '
+            let s .= ' ' 
             let wn = tabpagewinnr(i,'$')
 
             let s .= (i== t ? '%#TabNumSel#' : '%#TabNum#')
             let s .= i
-            if tabpagewinnr(i,'$') > 1
-                let s .= '.'
+            if tabpagewinnr(i,'$') > 1 
+                let s .= '.' 
                 let s .= (i== t ? '%#TabWinNumSel#' : '%#TabWinNum#')
-                let s .= (tabpagewinnr(i,'$') > 1 ? wn : '')
+                let s .= (tabpagewinnr(i,'$') > 1 ? wn : '') 
             end
-
             let s .= ' %*'
             let s .= (i == t ? '%#TabLineSel#' : '%#TabLine#')
             let bufnr = buflist[winnr - 1]
@@ -86,11 +85,11 @@ if exists("+showtabline")
                 let file = fnamemodify(file,':p:t')
             endif
             if file == ''
-                let file = 'unknow_file'
+                let file = '[No Name]'
             endif
             let s .= file
             "let s .= (i == t ? '%m' : '')
-            let i = i + 1
+            let i = i + 1 
         endwhile
         let s .= '%T%#TabLineFill#%='
         return s
@@ -148,6 +147,7 @@ set expandtab
 set smarttab
 set autoindent
 set backspace=indent,eol,start
+set numberwidth=1   " 去掉行号前的空格
 
 set history=200     " keep 50 lines of command line history
 set ruler           " show the cursor position all the time
