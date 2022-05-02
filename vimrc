@@ -1,4 +1,3 @@
-let mapleader="t"
 set nocompatible              " required
 filetype on                   " 侦测文件类型
 filetype plugin on            " 为特定文件类型载入相关缩进文件
@@ -32,8 +31,8 @@ let Tlist_Use_Right_Window = 1         "在右侧窗口中显示taglist窗口
 " mru 的配置
 nmap ff :MRU<CR>
 let MRU_Include_Files = '\.c$\|\.h$\|\.cpp$\|\.hpp$\|.jce$\|.py$\|.log$\|.txt$'
-let MRU_Window_Height = 15     "窗口高度
-let MRU_Max_Menu_Entries = 15  "窗口中展示条数
+let MRU_Window_Height = 35     "窗口高度
+let MRU_Max_Menu_Entries = 35  "窗口中展示条数
 let MRU_Max_Entries = 100
 let MRU_Auto_Close = 1
 
@@ -41,16 +40,16 @@ let MRU_Auto_Close = 1
 nmap <C-h> <ESC>:tabp<CR>
 nmap <C-l> <ESC>:tabn<CR>
 nmap <C-t> <ESC>:tabedit
-nmap 0 <ESC>:tabn 0<CR>
-nmap 1 <ESC>:tabn 1<CR>
-nmap 2 <ESC>:tabn 2<CR>
-nmap 3 <ESC>:tabn 3<CR>
-nmap 4 <ESC>:tabn 4<CR>
-nmap 5 <ESC>:tabn 5<CR>
-nmap 6 <ESC>:tabn 6<CR>
-nmap 7 <ESC>:tabn 7<CR>
-nmap 8 <ESC>:tabn 8<CR>
-nmap 9 <ESC>:tabn 9<CR>
+nmap g0 <ESC>:tabn 0<CR>
+nmap g1 <ESC>:tabn 1<CR>
+nmap g2 <ESC>:tabn 2<CR>
+nmap g3 <ESC>:tabn 3<CR>
+nmap g4 <ESC>:tabn 4<CR>
+nmap g5 <ESC>:tabn 5<CR>
+nmap g6 <ESC>:tabn 6<CR>
+nmap g7 <ESC>:tabn 7<CR>
+nmap g8 <ESC>:tabn 8<CR>
+nmap g9 <ESC>:tabn 9<CR>
 if exists("+showtabline")
     function! MyTabLine()
         let s = ''
@@ -154,6 +153,7 @@ set ruler           " show the cursor position all the time
 set showcmd         " display incomplete commands
 set incsearch       " do incremental searching
 set number
+set cindent
 
 syntax on
 set hlsearch
@@ -176,13 +176,6 @@ nmap ~ :nohlsearch<CR>
 "nmap 11  <C-w>k
 "nmap 22  <C-w>j
 nmap 00 <C-w><C-w>
-
-"autocmd VimEnter *, exec Init()
-"func Init()
-"    if &filetype == ''
-"        :MRU
-"    endif
-"endfunc
 
 nmap ge $
 nmap ga _
