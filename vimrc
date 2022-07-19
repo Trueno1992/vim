@@ -22,7 +22,7 @@ imap <F5> <ESC>:!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q . <CR><CR> :Tl
 
 "以下是taglist的设置
 nmap tt :Tlist<CR><CR> 00<CR>
-let Tlist_Auto_Open=1                  "默认打开Taglist
+let Tlist_Auto_Open=0                  "默认打开Taglist
 let Tlist_Ctags_Cmd = '/usr/bin/ctags' "ctag的安装路径
 let Tlist_Show_One_File = 1            "不同时显示多个文件的tag，只显示当前文件的
 let Tlist_Exit_OnlyWindow = 1          "如果taglist窗口是最后一个窗口，则退出vim
